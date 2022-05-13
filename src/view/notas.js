@@ -3,6 +3,7 @@ import { cerrar  } from "../firebase/promesasFb.js";
 
 export default () => {
   const viewNotas = `<header>
+  <main class='main-notas'>
     <div class='titulo-muro'>NOTAS</div>
   </header>
   <div class='cerrar'><i class='fa-solid fa-arrow-right-from-bracket' id='cerrarSesion' ></i></div>
@@ -17,7 +18,7 @@ export default () => {
       </form>
      </div>
      <aside>  <div id='post-container' class='post-container'></div> </aside>
-  
+     </main>
   <footer id='create-post'>           
   </footer>
   `;

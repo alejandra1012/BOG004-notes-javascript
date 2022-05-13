@@ -10,7 +10,6 @@ export const changeView = (hash) => {
     case '#/inicioSesion': {
       return sectionMain.appendChild(components.inicioSesion());
     }
-    case '#/registro':
     case '#/notas':
     {
       return sectionMain.appendChild(components[id]());
