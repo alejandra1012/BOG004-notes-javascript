@@ -49,14 +49,14 @@ body{
 }
 .loginGoogle{
   display: flex;;
-  box-shadow: 1px 1px 15px 15px  #666666;
+  box-shadow: 1px 1px 5px 5px azure;
 /* Crear degradados */
   background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
 /* Dar bordes curvados a btn */
   border-radius: 28px;
   text-shadow: 3px 2px 1px #9daef5;
   font-family: cursive;
-  margin-left: 10px;
+  margin-left: 7px;
   padding-left: 20px;
   margin-right: 20px;
 }
@@ -81,7 +81,7 @@ h4{
 }
 
 .botonGoogle{
-    padding-top: 50px;
+    padding-top: 20px;
     margin-left: 0px;
     padding-bottom: 10px;
 }
@@ -125,19 +125,20 @@ footer{
          height: 50px;
      }
      .inicio{
-         padding-bottom: 100px;
+         padding-bottom: 120px;
          margin-top: 30px;
      }
      .logo{
          height: 30px;
      }
      .loginGoogle{
+        box-shadow: 1px 1px 15px 15px#666666;
        font-size: 27px;
        padding: 19px;
      }     
      h4{
         width: 300px;
-        font-size: 20px;
+        font-size: 24px;
      }
      
      .botonGoogle{

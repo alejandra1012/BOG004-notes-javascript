@@ -4,7 +4,7 @@ import { loginGoogleM } from '../firebase/promesasFb.js';
 export default () => {
   const viewInicioSesion = 
   `<header>
-    <div><img class='nota' src="./img/note jpg.jpg" alt="nota"></div>
+    <div><img class='nota' src="./img/notejpg.jpg" alt="nota"></div>
   </header>
   <main class='inicio'>
   <h1 class= 'nombreLabNotes' >RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo"></h1>
