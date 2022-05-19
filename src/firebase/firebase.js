@@ -13,6 +13,8 @@ import {
   orderBy,
   doc,
   deleteDoc,
+  getDoc,
+  updateDoc
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 // Your web app's Firebase configuration
@@ -44,4 +46,7 @@ export {
   query, 
   orderBy, 
   doc, 
-  deleteDoc };
+  deleteDoc,
+  getDoc,
+  updateDoc,
+ };

@@ -14,6 +14,8 @@ import {
   doc,
   serverTimestamp,
   deleteDoc,
+  getDoc,
+  updateDoc,
 } from '../firebase/firebase.js';
 
 export function loginGoogle() {
@@ -47,8 +49,9 @@ export const currentUser = () => {
 
 const dbNotas = collection(db, 'Notas');
 
-export function crearNota(noteDescription, uid, email) {
+export function crearNota(titleNote, noteDescription, uid, email) {
   return addDoc(dbNotas, {
+    titleNote,
     noteDescription,
     email,
     uid,
@@ -69,4 +72,15 @@ export function readAllNotes(querySnapshot) {
 
 export function borrarNotas(id) {
   return deleteDoc(doc(dbNotas, id));
+}
+
+export function obtenerNota(id) {
+  const docRef = doc(dbNotas, id);
+  const docSnap = getDoc(docRef);
+  return docSnap;
+}
+
+export function actualizarNota(id, descripcionNotaAct) {
+  console.log(id,  descripcionNotaAct);
+  return updateDoc(doc(dbNotas, id), descripcionNotaAct);
 }
