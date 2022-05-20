@@ -62,8 +62,19 @@ export default () => {
     });
   };
   putUp(userInfo);
-
+  
   const btnSave = divElement.querySelector('#btn-note-save');
+  titleNote.addEventListener('keyup', () => {
+    // evento del textarea
+    const titleContent = titleNote.value;
+    // trim() metodo que no permite activar boton con espacio
+    if (titleContent === '' ) {
+      btnSave.disabled = true; // boton publicar inactivo
+    } else {
+      btnSave.disabled = false; // boton publicar activo
+    }
+  });
+
   noteDescription.addEventListener('keyup', () => {
     // evento del textarea
     const noteContent = noteDescription.value;
@@ -83,10 +94,11 @@ export default () => {
     readAllNotes((response) => {
       let notesTemplate = '';
       response.forEach((doc) => {
+        const title = doc.data();
         const note = doc.data();
         let deleteEditSection;
         // const userIdLogin = sessionUser;
-        if (userId === note.uid) {
+        if (userId === note.uid && title.uid) {
           deleteEditSection = `
             <button class='edit-img' id='edit' data-noteid='${doc.id}'>Editar</button>
             <button class='guardar-img hidenBtn'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
@@ -100,8 +112,9 @@ export default () => {
             <div id='note-container-header' class='note-container-header'>
               <div class='name-container'>${note.email}</div>
             </div>
-            <input type="text" id='title-note' value= ${note.titleNote} placeholder='titulo'>
-            <textarea type='text' class='note-content inp-pos-modal-note' readonly id='${doc.id}'>${note.noteDescription}
+            <textarea type='text' class='titleList' readonly id='${doc.id}'>${title.titleNote}
+            </textarea>  
+            <textarea type='text' class='noteList' readonly id='${doc.id}'>${note.noteDescription}
             </textarea>  
             <div class='btns-post-container'>${deleteEditSection}</div>
             </div>
@@ -122,7 +135,8 @@ export default () => {
       eliminarNota();
 
       const editNote = () => {
-        const editNoteDescrip = divElement.querySelectorAll('.note-content');
+        const editTitle = divElement.querySelectorAll('.titleList'.trim())
+        const editNoteDescrip = divElement.querySelectorAll('.noteList'.trim());
         const editBtn = divElement.querySelectorAll('#edit');
         const guardarBtn = divElement.querySelectorAll('#guardar');
         editBtn.forEach((btnEdit, index) => {
@@ -137,34 +151,50 @@ export default () => {
                 }
               });
             });
+            obtenerNota(clickBtnEdit).then(() => {
+              editTitle.forEach((textArea) => {
+                if (textArea.id === clickBtnEdit) {
+                  textArea.removeAttribute('readonly');
+                  btnEdit.classList.add('hidenBtn');
+                  guardarBtn[index].classList.remove('hidenBtn');
+                }
+              });
+            });
           });
         });
         guardarBtn.forEach((btnGuardar, index) => {
           btnGuardar.addEventListener('click', (e) => {
             const clickBtn = e.target.dataset.noteid;
-            console.log('AQUI',document.querySelector('#'+clickBtn).value);
-            actualizarNota(clickBtn.trim(), {titleNote:document.querySelector('#'+clickBtn).value.trim()});
-            actualizarNota(clickBtn.trim(), {noteDescription:document.querySelector('#'+clickBtn).value.trim()} );
+            obtenerNota(clickBtn).then(() => {
+              editNoteDescrip.forEach((textArea) => {
+                if (textArea.id === clickBtn) {
+                  textArea.setAttribute('readonly', true);
+                  btnGuardar.classList.add('hidenBtn');
+                  editBtn[index].classList.remove('hidenBtn');
+                  let noteDescription = textArea.value;
+                  actualizarNota(textArea.id, { noteDescription });
+                }
+              });
+            });
+            obtenerNota(clickBtn).then(() => {
+              editTitle.forEach((textArea) => {
+                if (textArea.id === clickBtn) {
+                  textArea.setAttribute('readonly', true);
+                  btnGuardar.classList.add('hidenBtn');
+                  editBtn[index].classList.remove('hidenBtn');
+                  let titleNote = textArea.value;
+                  actualizarNota(textArea.id, { titleNote });
+                }
+              });
+            });
           });
         });
       };
       editNote();
-    
-
-      
-
-
-
-
-
     });
     readAllNotes(querySnapshot);
   };
   noteController();
-
-
-
-
 
   return divElement;
 

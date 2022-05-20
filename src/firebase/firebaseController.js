@@ -50,12 +50,7 @@ export const currentUser = () => {
 const dbNotas = collection(db, 'Notas');
 
 export function crearNota(titleNote, noteDescription, uid, email) {
-  return addDoc(dbNotas, {
-    titleNote,
-    noteDescription,
-    email,
-    uid,
-    noteCreatedAt: serverTimestamp(),
+  return addDoc(dbNotas, {titleNote, noteDescription, email, uid, noteCreatedAt: serverTimestamp(),
   });
 }
 console.log(dbNotas);
