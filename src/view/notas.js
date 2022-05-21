@@ -5,20 +5,20 @@ import { currentUser, crearNota, getNote, readAllNotes, borrarNotas, obtenerNota
 export default () => {
   const viewNotas = `<header>
   <main class='main-notas'>
-    <div class='titulo-muro'>RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo"> </div>
+    <div class='titulo-blockNotas'>RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo"> </div>
   </header>
   <div class='cerrar'><i class='fa-solid fa-arrow-right-from-bracket' id='cerrarSesion' ></i></div>
           <div class='name-container'>Crear Nueva Nota +</div>
          </div>
         <form id='modal_notes-container' class='modal_notes-container'>
           <div id='text-container'>
-          <input type="text" id='title-note' placeholder='titulo'>
-            <textarea type='text' id='note-description' placeholder='Crear nueva nota'></textarea>
+          <input type="text" id='title-note' placeholder='Titulo'>
+            <textarea type='text' id='note-description' placeholder='Descripción'></textarea>
           </div>
         
          <button disabled type='submit' id='btn-note-save' class='btn-note-save'>Save</button>  
       </form>
-      <h2>NOTAS</h2>
+      <h2>NOTAS<img class='signoN' src="./img/signo3.webp" alt="signo"></h2>
      </div>
      <aside>  <div id='note-container' class='note-container'></div> </aside>
      </main>
@@ -100,9 +100,9 @@ export default () => {
         // const userIdLogin = sessionUser;
         if (userId === note.uid && title.uid) {
           deleteEditSection = `
-            <button class='edit-img' id='edit' data-noteid='${doc.id}'>Editar</button>
-            <button class='guardar-img hidenBtn'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
-            <button class='delete-img' id='delete' data-noteid='${doc.id}'>X</button>          
+            <button class='btn-edit' id='edit' data-noteid='${doc.id}'>Editar</button>
+            <button class='btn-guardar'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
+            <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>          
           `;
         } else {
           deleteEditSection = '<h2></h2>';

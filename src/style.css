@@ -101,6 +101,120 @@ footer{
     text-shadow: 1px 1px black;
 }
 
+/* estilos block de notas */
+.position{
+    background-color: black;
+}
+.titulo-blockNotas{
+    color: salmon;
+    FONT-SIZE: xx-large;
+    font-family: cursive;
+
+}
+
+.fa-solid,.fas{
+    margin-left: 200px;
+    color: white;
+
+}
+
+.name-container{
+    font-family: cursive;
+    color:#9daef5;
+    font-size: larger;
+
+}
+
+#title-note{
+    margin-left: 100px;
+    width: 190px;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    color: white;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+
+}
+
+#note-description{
+    margin-left: 100px;
+    width: 192px;
+    height: 10vh;
+    background-color: lightseagreen;
+    font-size: smaller;
+    font-family: cursive;
+    color: white;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+}
+
+.btn-note-save{
+    margin-left: 150px;
+    color: white;
+    margin-left: 250px;
+    background-color: lightseagreen;
+    font-family: cursive;
+}
+
+h2{
+    color: salmon;
+    margin: auto;
+    font-family: cursive;
+}
+.signoN{
+    width: 30px;
+}
+.titleList{
+    margin-left: 100px;
+    width: 190px;
+    height: 20px;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    color: white;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+}
+
+.noteList{
+    margin-left: 100px;
+    width: 192px;
+    height: 20vh;
+    background-color: lightseagreen;
+    font-size: smaller;
+    font-family: cursive;
+    color: white;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+}
+
+.btns-post-container{
+    display: flex;
+    margin-left: 90px;
+    justify-content: space-around;
+}
+.btn-edit{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+
+}
+.btn-guardar{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+}
+.btn-delete{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+}
+
 @media screen and (min-width:767px){
      .nota{
          height: 300px;
@@ -155,6 +269,53 @@ footer{
      .emogi{
          width: 70px;
      }
+     /* estilos block de notas */
+
+     .titulo-blockNotas{
+        font-size:-webkit-xxx-large;
+    } ;
+    
+    .cerrar{
+        margin-left: 500px;
+    
+    }
+    .name-container{
+        font-size: xx-large;
+    }
+   #text-container{
+       display: grid;
+   }
+
+   .div-notes-container{
+       display: grid;
+   }
+
+    h2{
+        font-size: xx-large;
+    }
+    .signoN{
+        width: 50px;
+    }
+    .titleList{
+        
+    }
+    
+    .noteList{
+        
+    }
+    
+    .btns-post-container{
      
+    }
+    .btn-edit{
+      
+    
+    }
+    .btn-guardar{
+        
+    }
+    .btn-delete{
+        
+    }
 
 }
