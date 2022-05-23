@@ -77,5 +77,5 @@ export function obtenerNota(id) {
 
 export function actualizarNota(id, descripcionNotaAct) {
   console.log(id,  descripcionNotaAct);
-  return updateDoc(doc(dbNotas, id), descripcionNotaAct);
+  return updateDoc(doc(dbNotas, id),  descripcionNotaAct);
 }

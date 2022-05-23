@@ -1,4 +1,4 @@
-import { auth } from "../firebase/firebase.js";
+import { auth, serverTimestamp } from "../firebase/firebase.js";
 import { cerrar  } from "../firebase/promesasFb.js";
 import { currentUser, crearNota, getNote, readAllNotes, borrarNotas, obtenerNota, actualizarNota} from "../firebase/firebaseController.js";
 
@@ -6,23 +6,23 @@ export default () => {
   const viewNotas = `<header>
   <main class='main-notas'>
     <div class='titulo-blockNotas'>RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo"> </div>
-  </header>
-  <div class='cerrar'><i class='fa-solid fa-arrow-right-from-bracket' id='cerrarSesion' ></i></div>
+      </header>
+      <div class='cerrar'><i class='fa-solid fa-arrow-right-from-bracket' id='cerrarSesion' ></i></div>
           <div class='name-container'>Crear Nueva Nota +</div>
          </div>
         <form id='modal_notes-container' class='modal_notes-container'>
           <div id='text-container'>
           <input type="text" id='title-note' placeholder='Titulo'>
             <textarea type='text' id='note-description' placeholder='Descripción'></textarea>
+            
           </div>
-        
-         <button disabled type='submit' id='btn-note-save' class='btn-note-save'>Save</button>  
+          <button disabled type='submit' id='btn-note-save' class='btn-note-save'>Save</button>
       </form>
       <h2>NOTAS<img class='signoN' src="./img/signo3.webp" alt="signo"></h2>
      </div>
      <aside>  <div id='note-container' class='note-container'></div> </aside>
      </main>
-  <footer id='create-post'>           
+  <footer id='create-post'>
   </footer>
   `;
 
@@ -41,7 +41,7 @@ export default () => {
   const userInfo = currentUser();
   let userId = '';
   if (userInfo !== null) {
-   
+
     userId = userInfo.uid;
   }
 
@@ -62,7 +62,7 @@ export default () => {
     });
   };
   putUp(userInfo);
-  
+
   const btnSave = divElement.querySelector('#btn-note-save');
   titleNote.addEventListener('keyup', () => {
     // evento del textarea
@@ -96,29 +96,32 @@ export default () => {
       response.forEach((doc) => {
         const title = doc.data();
         const note = doc.data();
+        //console.log(title.noteCreatedAt);
+        //const fecha = (title.noteCreatedAt.toDate().toString()).substr(0,25)
         let deleteEditSection;
         // const userIdLogin = sessionUser;
         if (userId === note.uid && title.uid) {
           deleteEditSection = `
             <button class='btn-edit' id='edit' data-noteid='${doc.id}'>Editar</button>
             <button class='btn-guardar'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
-            <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>          
+            <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>
           `;
         } else {
           deleteEditSection = '<h2></h2>';
         }
         notesTemplate += `
-          <div id='div-notes-container' class='div-notes-container'> 
+          <div id='div-notes-container' class='div-notes-container'>
             <div id='note-container-header' class='note-container-header'>
               <div class='name-container'>${note.email}</div>
             </div>
             <textarea type='text' class='titleList' readonly id='${doc.id}'>${title.titleNote}
-            </textarea>  
+            </textarea>
             <textarea type='text' class='noteList' readonly id='${doc.id}'>${note.noteDescription}
-            </textarea>  
+            </textarea>
+            <div class= 'current_date'>${(title.noteCreatedAt.toDate().toString()).substr(0,25)}</div>
             <div class='btns-post-container'>${deleteEditSection}</div>
             </div>
-          </div>    
+          </div>
         `;
       });
       noteContainer.innerHTML = notesTemplate;
@@ -172,7 +175,7 @@ export default () => {
                   btnGuardar.classList.add('hidenBtn');
                   editBtn[index].classList.remove('hidenBtn');
                   let noteDescription = textArea.value;
-                  actualizarNota(textArea.id, { noteDescription });
+                  actualizarNota(textArea.id, { noteDescription, noteCreatedAt: serverTimestamp() });
                 }
               });
             });
@@ -183,7 +186,7 @@ export default () => {
                   btnGuardar.classList.add('hidenBtn');
                   editBtn[index].classList.remove('hidenBtn');
                   let titleNote = textArea.value;
-                  actualizarNota(textArea.id, { titleNote });
+                  actualizarNota(textArea.id, { titleNote, noteCreatedAt: serverTimestamp() });
                 }
               });
             });
