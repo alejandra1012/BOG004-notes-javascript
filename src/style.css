@@ -102,26 +102,36 @@ footer{
 }
 
 /* estilos block de notas */
-.position{
+/* .position{
+    background-color: black;
+} */
+
+
+.modal_notes-container{
     background-color: black;
 }
 .titulo-blockNotas{
     color: salmon;
     FONT-SIZE: xx-large;
     font-family: cursive;
+    background-color: black;
 
 }
 
 .fa-solid,.fas{
-    margin-left: 200px;
+    margin-left: 85%;
     color: white;
-
+    font-size: x-large;
+}
+.cerrar{
+    background-color: black;
 }
 
 .name-container{
     font-family: cursive;
     color:#9daef5;
     font-size: larger;
+    background-color: black;
 
 }
 
@@ -152,7 +162,6 @@ footer{
 }
 
 .btn-note-save{
-    margin-left: 150px;
     color: white;
     margin-left: 250px;
     background-color: lightseagreen;
@@ -163,12 +172,17 @@ h2{
     color: salmon;
     margin: auto;
     font-family: cursive;
+    background-color: black;
 }
 .signoN{
     width: 30px;
 }
+.div-notes-container{
+    background-color: black;
+    color: white;
+}
 .titleList{
-    margin-left: 100px;
+    margin-left: 30%;
     width: 190px;
     height: 20px;
     background-color: lightseagreen;
@@ -181,7 +195,7 @@ h2{
 }
 
 .noteList{
-    margin-left: 100px;
+    margin-left: 30%;
     width: 192px;
     height: 20vh;
     background-color: lightseagreen;
@@ -192,10 +206,14 @@ h2{
     border-color: aquamarine;
     box-shadow: 1px 1px 15px;
 }
+.current_date{
+    width: 94px;
+    height: 0px;
+}
 
 .btns-post-container{
-    display: flex;
-    margin-left: 90px;
+    display: inline-table;
+    margin-left: 30%;
     justify-content: space-around;
 }
 .btn-edit{
@@ -273,12 +291,20 @@ h2{
 
      .titulo-blockNotas{
         font-size:-webkit-xxx-large;
-    } ;
-    
-    .cerrar{
-        margin-left: 500px;
-    
+    } 
+    .fa-solid,.fas{
+        font-size: xx-large;
     }
+    #title-note{
+        margin-left: 255px;}
+        
+    #note-description {
+        margin-left: 255px;}
+
+    .btn-note-save{  
+        margin-left: 250;
+    }  
+
     .name-container{
         font-size: xx-large;
     }
@@ -296,26 +322,21 @@ h2{
     .signoN{
         width: 50px;
     }
-    /* .titleList{
-        
+    .titleList{
+        margin-left: 50%;
     }
     
     .noteList{
+        margin-left: 50%;
         
     }
     
     .btns-post-container{
+        display: inline-table;
+        margin-left: 50%;
      
     }
-    .btn-edit{
-      
-    
-    }
-    .btn-guardar{
-        
-    }
-    .btn-delete{
-        
-    } */
+    .current_date {
+        width: 190px;}
 
 }
