@@ -1,6 +1,6 @@
-import { auth, serverTimestamp } from "../firebase/firebase.js";
-import { cerrar  } from "../firebase/promesasFb.js";
-import { currentUser, crearNota, getNote, readAllNotes, borrarNotas, obtenerNota, actualizarNota} from "../firebase/firebaseController.js";
+import { auth, serverTimestamp } from '../firebase/firebase.js';
+import { cerrar } from '../firebase/promesasFb.js';
+import { currentUser, crearNota, getNote, readAllNotes, borrarNotas, obtenerNota, actualizarNota } from '../firebase/firebaseController.js';
 
 export default () => {
   const viewNotas = `<header>
@@ -35,18 +35,16 @@ export default () => {
     e.preventDefault();
     console.log('cerrarSecion');
     cerrar(auth);
-
   });
 
   const userInfo = currentUser();
   let userId = '';
   if (userInfo !== null) {
-
     userId = userInfo.uid;
   }
 
   const modalNotes = divElement.querySelector('#modal_notes-container');
-  const titleNote = divElement.querySelector('#title-note')
+  const titleNote = divElement.querySelector('#title-note');
   const noteDescription = divElement.querySelector('#note-description');
   const sessionUser = JSON.parse(sessionStorage.getItem('userId'));
 
@@ -68,7 +66,7 @@ export default () => {
     // evento del textarea
     const titleContent = titleNote.value;
     // trim() metodo que no permite activar boton con espacio
-    if (titleContent === '' ) {
+    if (titleContent === '') {
       btnSave.disabled = true; // boton publicar inactivo
     } else {
       btnSave.disabled = false; // boton publicar activo
@@ -79,7 +77,7 @@ export default () => {
     // evento del textarea
     const noteContent = noteDescription.value;
     // trim() metodo que no permite activar boton con espacio
-    if (noteContent === '' ) {
+    if (noteContent === '') {
       btnSave.disabled = true; // boton publicar inactivo
     } else {
       btnSave.disabled = false; // boton publicar activo
@@ -97,37 +95,34 @@ export default () => {
         const title = doc.data();
         const note = doc.data();
         //console.log(title.noteCreatedAt);
-        //const fecha = (title.noteCreatedAt.toDate().toString()).substr(0,25)
-        let deleteEditSection;
+        const fecha = title.noteCreatedAt.toDate().toString().substr(0, 25);
         // const userIdLogin = sessionUser;
-        if (userId === note.uid && title.uid) {
-          deleteEditSection = `
-            <button class='btn-edit' id='edit' data-noteid='${doc.id}'>Editar</button>
-            <button class='btn-guardar'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
-            <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>
+        if (userId === note.uid) {
+          notesTemplate += `
+          <div id='div-notes-container' class='div-notes-container'>
+          <div id='note-container-header' class='note-container-header'>
+            <div class='name-container'>${note.email}</div>
+          </div>
+          <textarea type='text' class='titleList' readonly id='${doc.id}'>${title.titleNote}
+          </textarea>
+          <div class= 'current_date'>${fecha}</div>
+          <textarea type='text' class='noteList' readonly id='${doc.id}'>${note.noteDescription}
+          </textarea>
+          <div class='btns-note-container'>
+          <button class='btn-edit' id='edit' ><img class='edit' data-noteid='${doc.id}' src="./img/editar.png" alt="editar"></button>
+          <button class='btn-guardar'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
+          <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>
+          </div>
+          </div>
+        </div>
           `;
         } else {
-          deleteEditSection = '<h2></h2>';
         }
-        notesTemplate += `
-          <div id='div-notes-container' class='div-notes-container'>
-            <div id='note-container-header' class='note-container-header'>
-              <div class='name-container'>${note.email}</div>
-            </div>
-            <textarea type='text' class='titleList' readonly id='${doc.id}'>${title.titleNote}
-            </textarea>
-            <textarea type='text' class='noteList' readonly id='${doc.id}'>${note.noteDescription}
-            </textarea>
-            <div class= 'current_date'>${(title.noteCreatedAt.toDate().toString()).substr(0,25)}</div>
-            <div class='btns-post-container'>${deleteEditSection}</div>
-            </div>
-          </div>
-        `;
       });
       noteContainer.innerHTML = notesTemplate;
 
-       // Eliminar post
-       const eliminarNota = () => {
+      // Eliminar post
+      const eliminarNota = () => {
         const deleteButton = divElement.querySelectorAll('#delete');
         deleteButton.forEach((btnDelete) => {
           btnDelete.addEventListener('click', ({ target: { dataset } }) => {
@@ -138,7 +133,7 @@ export default () => {
       eliminarNota();
 
       const editNote = () => {
-        const editTitle = divElement.querySelectorAll('.titleList'.trim())
+        const editTitle = divElement.querySelectorAll('.titleList'.trim());
         const editNoteDescrip = divElement.querySelectorAll('.noteList'.trim());
         const editBtn = divElement.querySelectorAll('#edit');
         const guardarBtn = divElement.querySelectorAll('#guardar');
@@ -200,5 +195,4 @@ export default () => {
   noteController();
 
   return divElement;
-
 };
