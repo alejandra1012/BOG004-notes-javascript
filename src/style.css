@@ -1,0 +1,404 @@
+body{
+   background-color: burlywood;
+}
+.nota{
+    height: 100px;
+    position: fixed;
+    border-radius: 300px;
+}
+.nombreLabNotes{
+    margin-left: 70px;
+    color: salmon;
+    font-family: cursive;
+}
+
+.titulo{
+    margin-left: 10px;
+    font-size: smaller;
+    font-family: cursive;
+    color: turquoise;
+}
+.container{
+    color: #9daef5;
+     font-size: smaller;
+     font-family: cursive;
+}
+.signo{
+    height: 50px;
+}
+.signo2{
+    height: 30px;
+}
+.inicio{
+    background-color: black;
+    width : 90%;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    box-shadow: 1px 1px 15px 15px azure;
+    display: grid;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    padding-bottom: 20px;
+}
+.logo{
+    height: 22px;
+    margin-top: auto;
+    margin-right: 5px;
+}
+.loginGoogle{
+  display: flex;;
+  box-shadow: 1px 1px 5px 5px azure;
+/* Crear degradados */
+  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+/* Dar bordes curvados a btn */
+  border-radius: 28px;
+  text-shadow: 3px 2px 1px #9daef5;
+  font-family: cursive;
+  margin-left: 7px;
+  padding-left: 20px;
+  margin-right: 20px;
+}
+/* Al poner el curso encima (hover) */
+.loginGoogle:hover {
+  background: #2079b0;
+  background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+  text-decoration: none;
+   
+}
+
+
+h4{
+    margin-top: 10px;
+    margin-bottom: 1px;
+    width: 200px;
+    font-size: medium;
+}
+
+.botonGoogle{
+    padding-top: 20px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+
+h3{
+    color: darkturquoise;
+    font-family:cursive;
+    font-size: small;
+}
+
+.emogi{
+    width: 20px;
+}
+
+footer{
+    color: black;
+    text-shadow: 1px 1px black;
+}
+
+/* estilos block de notas */
+/* .position{
+    background-color: black;
+} */
+
+.email{
+    color: #c0f5f5;
+    font-size: 18px;
+    margin-left: 28%;
+    font-family: cursive;
+    padding-bottom: 10px;
+}
+
+.modal_notes-container{
+    display: flex;
+}
+.titulo-blockNotas{
+    color: forestgreen;
+    font-size: xx-large;
+    font-family: cursive;
+    text-shadow: 1px 1px;
+}
+
+.fa-solid,.fas{
+    margin-left: 85%;
+    color: black;
+    font-size: x-large;
+}
+
+
+.name-container{
+    font-family: cursive;
+    color: forestgreen;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px;
+}
+
+#title-note{
+    width: 222px;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+    margin-bottom: 5px;
+}
+#title-note::placeholder{
+    color:black ;
+}
+
+#note-description{
+    width: 224px;
+    height: 10vh;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px;
+}
+#note-description::placeholder{
+    color: black;
+}
+
+.btn-note-save{
+    color: white;
+    margin-right: 65%;
+    background-color: lightseagreen;
+    font-family: cursive;
+    border-radius: 15px;
+    width: 46px;
+    margin-top: auto;
+    box-shadow: 1px 1px 15px;
+}
+.save{
+    height: 32px;
+}
+
+.inicioNotas{
+    color: forestgreen;
+    font-family: cursive;
+    text-shadow: 1px 1px;
+    font-size: medium;
+}
+.signoN{
+    width: 30px;
+}
+
+.div-notes-container{
+    color: white;
+    padding-bottom: 35px;
+    margin-right: 26%;
+}
+.titleList{
+    margin-left: 32%;
+    width: 190px;
+    height: 25px;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    color: black;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px white;
+}
+
+.noteList{
+    margin-left: 32%;
+    width: 192px;
+    height: 20vh;
+    background-color: lightseagreen;
+    font-size: large;
+    font-family: cursive;
+    color: black;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px white;
+}
+.current_date{
+    text-align: center;
+    color: black;
+    margin-top: -4px;
+    margin-left: 33%;
+    width: 190px;
+    height: 25px;
+    background-color: lightseagreen;
+    font-size: smaller;
+    font-family: cursive;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px white;
+    
+}
+
+.btns-note-container{
+    display: inline-table;
+    margin-left: 35%;
+    justify-content: space-around;
+}
+.btn-edit{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
+}
+.edit{
+    height: 25px;
+}
+.btn-guardar{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
+}
+.guardar{
+    height: 25px;
+}
+.btn-delete{
+    color: white;
+    background-color: lightseagreen;
+    font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
+}
+.delete{
+    height: 25px;
+}
+
+@media screen and (min-width:767px){
+     .nota{
+         height: 300px;
+     }
+     .nombreLabNotes{
+         margin-left: 210px;
+         font-size: -webkit-xxx-large;
+     }
+     
+     .titulo{
+         margin-left: 210px;
+         font-size: larger;
+     }
+     .container{
+         margin-left: 200px;
+         font-size: x-large;
+     }
+     .signo{
+         height: 80px;
+     }
+     .signo2{
+         height: 50px;
+     }
+     .inicio{
+         padding-bottom: 120px;
+         margin-top: 30px;
+     }
+     .logo{
+         height: 30px;
+     }
+     .loginGoogle{
+        box-shadow: 1px 1px 15px 15px#666666;
+       font-size: 27px;
+       padding: 19px;
+     }     
+     h4{
+        width: 300px;
+        font-size: 24px;
+     }
+     
+     .botonGoogle{
+         padding-top: 50px;
+         margin-left: 200px;
+     }
+     
+     h3{
+       
+         font-size: larger;
+         margin-inline-start: auto;
+     }
+     
+     .emogi{
+         width: 70px;
+     }
+     /* estilos block de notas */
+
+     .titulo-blockNotas{
+        font-size:-webkit-xxx-large;
+        margin-left: 20px;
+        margin-top: 25px;
+    } 
+    .email{
+        font-size: 28px;
+        margin-left: 50%;
+    }
+    .fa-solid,.fas{
+        font-size: xx-large;
+    }
+    #title-note{
+        margin-left: 255px;}
+        
+    #note-description {
+        margin-left: 255px;}
+
+    .btn-note-save{  
+        margin-left: 0px;
+    }  
+    .inicioNotas {
+        font-size: x-large;
+        margin-left: 20px;
+    }
+
+    .name-container{
+        font-size: xx-large;
+        margin-left: 20px;
+        margin-bottom: 25px
+    }
+   #text-container{
+       display: grid;
+   }
+
+   .div-notes-container{
+       display: grid;
+   }
+
+    h2{
+        font-size: xx-large;
+    }
+    .signoN{
+        width: 50px;
+    }
+     .note-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+        
+    }
+    .titleList{
+        margin-left: 0px;
+        border-radius: 20px;
+    }
+    .noteList{
+        margin-left: 0px;
+        border-radius: 20px;
+    }
+    
+    .btns-note-container{
+        flex-wrap: nowrap;
+        margin-left: 0px;
+     
+    }
+    .current_date {
+        border-radius: 20px;
+        width: 197px;
+        margin-left: 0px;
+    }
+    
+    
+
+}
