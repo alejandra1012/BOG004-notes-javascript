@@ -3,25 +3,24 @@ import { cerrar } from '../firebase/promesasFb.js';
 import { currentUser, crearNota, getNote, readAllNotes, borrarNotas, obtenerNota, actualizarNota } from '../firebase/firebaseController.js';
 
 export default () => {
-  const viewNotas = `<header>
-  <main class='main-notas'>
-    <div class='titulo-blockNotas'>RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo"> </div>
-      </header>
+  const viewNotas = `
+  
+  <header class='titulo-blockNotas'>RECUÉRDALO<img class='signo' src="./img/signo3.webp" alt="signo">
+  <div class= email> ${JSON.parse(sessionStorage.getItem('userId')).email}</div>
+  </header>
       <div class='cerrar'><i class='fa-solid fa-arrow-right-from-bracket' id='cerrarSesion' ></i></div>
-          <div class='name-container'>Crear Nueva Nota +</div>
-         </div>
+          <h2 class='name-container'>Crear Nueva Nota +</h2>
         <form id='modal_notes-container' class='modal_notes-container'>
           <div id='text-container'>
           <input type="text" id='title-note' placeholder='Titulo'>
             <textarea type='text' id='note-description' placeholder='Descripción'></textarea>
-            
           </div>
-          <button disabled type='submit' id='btn-note-save' class='btn-note-save'>Save</button>
+          <button disabled type='submit' id='btn-note-save' class='btn-note-save'><img class='save' src="./img/confirmation.png" alt="signo"></button>
       </form>
-      <h2>NOTAS<img class='signoN' src="./img/signo3.webp" alt="signo"></h2>
+      <h3 class=inicioNotas >NOTAS<img class='signoN' src="./img/signo3.webp" alt="signo"></h3>
      </div>
      <aside>  <div id='note-container' class='note-container'></div> </aside>
-     </main>
+   
   <footer id='create-post'>
   </footer>
   `;
@@ -100,18 +99,15 @@ export default () => {
         if (userId === note.uid) {
           notesTemplate += `
           <div id='div-notes-container' class='div-notes-container'>
-          <div id='note-container-header' class='note-container-header'>
-            <div class='name-container'>${note.email}</div>
-          </div>
           <textarea type='text' class='titleList' readonly id='${doc.id}'>${title.titleNote}
           </textarea>
-          <div class= 'current_date'>${fecha}</div>
           <textarea type='text' class='noteList' readonly id='${doc.id}'>${note.noteDescription}
           </textarea>
+           <div class= 'current_date'>${fecha}</div>
           <div class='btns-note-container'>
           <button class='btn-edit' id='edit' ><img class='edit' data-noteid='${doc.id}' src="./img/editar.png" alt="editar"></button>
-          <button class='btn-guardar'  id='guardar'  data-noteid='${doc.id}'>Guardar</button>
-          <button class='btn-delete' id='delete' data-noteid='${doc.id}'>X</button>
+          <button class='btn-guardar'  id='guardar' ><img class='guardar' data-noteid='${doc.id}' src="./img/confirmation.png" alt="guardar"></button>
+          <button class='btn-delete' id='delete' ><img class='delete' data-noteid='${doc.id}' src="./img/basura.png" alt="delete"></button>
           </div>
           </div>
         </div>

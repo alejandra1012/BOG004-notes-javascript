@@ -106,92 +106,106 @@ footer{
     background-color: black;
 } */
 
+.email{
+    color: #c0f5f5;
+    font-size: 18px;
+    margin-left: 28%;
+    font-family: cursive;
+    padding-bottom: 10px;
+}
 
 .modal_notes-container{
-    background-color: black;
+    display: flex;
 }
 .titulo-blockNotas{
-    color: salmon;
-    FONT-SIZE: xx-large;
+    color: forestgreen;
+    font-size: xx-large;
     font-family: cursive;
-    background-color: black;
-
+    text-shadow: 1px 1px;
 }
 
 .fa-solid,.fas{
     margin-left: 85%;
-    color: white;
+    color: black;
     font-size: x-large;
 }
-.cerrar{
-    background-color: black;
-}
+
 
 .name-container{
     font-family: cursive;
-    color:#9daef5;
-    font-size: larger;
-    background-color: black;
-
+    color: forestgreen;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px;
 }
 
 #title-note{
-    margin-left: 100px;
-    width: 190px;
+    width: 222px;
     background-color: lightseagreen;
     font-size: large;
     font-family: cursive;
-    color: white;
     border-radius: 10px;
     border-color: aquamarine;
     box-shadow: 1px 1px 15px;
-
+    margin-bottom: 5px;
+}
+#title-note::placeholder{
+    color:black ;
 }
 
 #note-description{
-    margin-left: 100px;
-    width: 192px;
+    width: 224px;
     height: 10vh;
     background-color: lightseagreen;
-    font-size: smaller;
+    font-size: large;
     font-family: cursive;
-    color: white;
     border-radius: 10px;
     border-color: aquamarine;
     box-shadow: 1px 1px 15px;
+}
+#note-description::placeholder{
+    color: black;
 }
 
 .btn-note-save{
     color: white;
-    margin-left: 250px;
+    margin-right: 65%;
     background-color: lightseagreen;
     font-family: cursive;
+    border-radius: 15px;
+    width: 46px;
+    margin-top: auto;
+    box-shadow: 1px 1px 15px;
+}
+.save{
+    height: 32px;
 }
 
-h2{
-    color: salmon;
-    margin: auto;
+.inicioNotas{
+    color: forestgreen;
     font-family: cursive;
-    background-color: black;
+    text-shadow: 1px 1px;
+    font-size: medium;
 }
 .signoN{
     width: 30px;
 }
+
 .div-notes-container{
-    background-color: black;
     color: white;
+    padding-bottom: 35px;
+    margin-right: 26%;
 }
 .titleList{
     margin-left: 32%;
     width: 190px;
-    height: 20px;
+    height: 25px;
     background-color: lightseagreen;
     font-size: large;
     font-family: cursive;
-    color: white;
+    color: black;
     border-radius: 10px;
     border-color: aquamarine;
-    box-shadow: 1px 1px 15px;
+    box-shadow: 1px 1px 15px white;
 }
 
 .noteList{
@@ -199,40 +213,63 @@ h2{
     width: 192px;
     height: 20vh;
     background-color: lightseagreen;
-    font-size: smaller;
+    font-size: large;
     font-family: cursive;
-    color: white;
+    color: black;
     border-radius: 10px;
     border-color: aquamarine;
-    box-shadow: 1px 1px 15px;
+    box-shadow: 1px 1px 15px white;
 }
 .current_date{
-    width: 94px;
-    height: 0px;
+    text-align: center;
+    color: black;
+    margin-top: -4px;
+    margin-left: 33%;
+    width: 190px;
+    height: 25px;
+    background-color: lightseagreen;
+    font-size: smaller;
+    font-family: cursive;
+    border-radius: 10px;
+    border-color: aquamarine;
+    box-shadow: 1px 1px 15px white;
+    
 }
 
 .btns-note-container{
     display: inline-table;
-    margin-left: 30%;
+    margin-left: 35%;
     justify-content: space-around;
 }
 .btn-edit{
     color: white;
     background-color: lightseagreen;
     font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
 }
 .edit{
-    height: 30px;
+    height: 25px;
 }
 .btn-guardar{
     color: white;
     background-color: lightseagreen;
     font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
+}
+.guardar{
+    height: 25px;
 }
 .btn-delete{
     color: white;
     background-color: lightseagreen;
     font-family: cursive;
+    border-radius: 15px ;
+    box-shadow: 1px 1px 15px;
+}
+.delete{
+    height: 25px;
 }
 
 @media screen and (min-width:767px){
@@ -240,12 +277,12 @@ h2{
          height: 300px;
      }
      .nombreLabNotes{
-         margin-left: 200px;
+         margin-left: 210px;
          font-size: -webkit-xxx-large;
      }
      
      .titulo{
-         margin-left: 200px;
+         margin-left: 210px;
          font-size: larger;
      }
      .container{
@@ -293,7 +330,13 @@ h2{
 
      .titulo-blockNotas{
         font-size:-webkit-xxx-large;
+        margin-left: 20px;
+        margin-top: 25px;
     } 
+    .email{
+        font-size: 28px;
+        margin-left: 50%;
+    }
     .fa-solid,.fas{
         font-size: xx-large;
     }
@@ -304,11 +347,17 @@ h2{
         margin-left: 255px;}
 
     .btn-note-save{  
-        margin-left: 250;
+        margin-left: 0px;
     }  
+    .inicioNotas {
+        font-size: x-large;
+        margin-left: 20px;
+    }
 
     .name-container{
         font-size: xx-large;
+        margin-left: 20px;
+        margin-bottom: 25px
     }
    #text-container{
        display: grid;
@@ -324,21 +373,32 @@ h2{
     .signoN{
         width: 50px;
     }
-    .titleList{
-        margin-left: 50%;
-    }
-    
-    .noteList{
-        margin-left: 50%;
+     .note-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+       
         
+    }
+    .titleList{
+        margin-left: 0px;
+        border-radius: 20px;
+    }
+    .noteList{
+        margin-left: 0px;
+        border-radius: 20px;
     }
     
     .btns-note-container{
-        display: inline-table;
-        margin-left: 50%;
+        flex-wrap: nowrap;
+        margin-left: 0px;
      
     }
     .current_date {
-        width: 190px;}
+        border-radius: 20px;
+        width: 197px;
+        margin-left: 0px;
+    }
+    
+    
 
 }
