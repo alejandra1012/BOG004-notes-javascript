@@ -34,7 +34,7 @@ Yo como usuaria quiero borrar una nota para no volver a verla.
 Este prototipo es de como queriamos que se viera la vista de notas de la app se diseño en pizarra de zoom y si se asemeja al resultado final.
 
 ## prototipo alta fidelidad.
-![](src/img/Prot-alta-fide.png)
+![](src/img/prot-alta-fide.png)
 
 Recibí feedback del prototipo de alta fidelidad con respecto si se debia o no agregar el espacio para usuario y contraseña pues uno de los requerimientos del proyecto era que el usuario se logueara con su cuenta de Google, al
 final lo pude modificar para no incluir la otra funcionalidad.
